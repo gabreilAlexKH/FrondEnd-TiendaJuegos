@@ -1,0 +1,120 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$md-primary-color: (
+    50 : #e8effa,
+    100 : #c6d7f2,
+    200 : #a1bde9,
+    300 : #7ba3e0,
+    400 : #5e8fd9,
+    500 : #427bd2,
+    600 : #3c73cd,
+    700 : #3368c7,
+    800 : #2b5ec1,
+    900 : #1d4bb6,
+    A100 : #edf2ff,
+    A200 : #bacdff,
+    A400 : #87a8ff,
+    A700 : #6e95ff,
+    contrast: (50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-accent-color: (
+    50 : #ecf9ec,
+    100 : #d1f0d0,
+    200 : #b2e6b1,
+    300 : #93dc91,
+    400 : #7bd57a,
+    500 : #64cd62,
+    600 : #5cc85a,
+    700 : #52c150,
+    800 : #48ba46,
+    900 : #36ae34,
+    A100 : #f7fff7,
+    A200 : #c5ffc4,
+    A400 : #93ff91,
+    A700 : #7aff78,
+    contrast: (50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-warn-color: (
+    50 : #fef8e2,
+    100 : #fdedb6,
+    200 : #fce285,
+    300 : #fbd654,
+    400 : #facd30,
+    500 : #f9c40b,
+    600 : #f8be0a,
+    700 : #f7b608,
+    800 : #f6af06,
+    900 : #f5a203,
+    A100 : #ffffff,
+    A200 : #fff6e8,
+    A400 : #ffe3b5,
+    A700 : #ffd99c,
+    contrast: (50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$cliente-primary: mat.define-palette($md-primary-color);
+$cliente-accent: mat.define-palette($md-accent-color);
+
+// The warn palette is optional (defaults to red).
+$cliente-warn: mat.define-palette($md-warn-color);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$cliente-theme: mat.define-light-theme((color: (primary: $cliente-primary,
+                accent: $cliente-accent,
+                warn: $cliente-warn,
+            )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($cliente-theme);
