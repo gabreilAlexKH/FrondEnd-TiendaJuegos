@@ -7,16 +7,25 @@ import { VenClienteComponent } from './ventanas/ven-cliente/ven-cliente.componen
 import { VenCadminComponent } from './ventanas/ven-cadmin/ven-cadmin.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import { UserToolbarComponent } from './componentes/user-toolbar/user-toolbar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     VenClienteComponent,
-    VenCadminComponent
+    VenCadminComponent,
+    UserToolbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

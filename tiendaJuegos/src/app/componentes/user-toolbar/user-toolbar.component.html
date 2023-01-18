@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button *ngIf="hasReturn">
+    <mat-icon>keyboard_backspace</mat-icon>
+  </button>
+  <img src="../../../assets/image/logowhite.png" height="30px">
+  <h1>{{titulo}}</h1>
+  <span class="spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>person</mat-icon>
+  </button>
+
+  <button mat-icon-button>
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+
+  <button mat-raised-button class="mx-1">
+    Mis JUEGOS
+  </button>
+  <button mat-raised-button class="mx-1" color="warn">
+    Admin MODE
+  </button>
+</mat-toolbar>

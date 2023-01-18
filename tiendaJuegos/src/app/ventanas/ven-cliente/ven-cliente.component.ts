@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class VenClienteComponent {
 
+
+  titulo:string = "Game Store";
+
 }

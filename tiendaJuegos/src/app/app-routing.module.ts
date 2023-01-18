@@ -6,10 +6,7 @@ import { VenCadminComponent } from './ventanas/ven-cadmin/ven-cadmin.component';
 const routes: Routes = [
   {path: "inicio", component: VenClienteComponent},
   {path: "admin", component: VenCadminComponent},
-  {path: "*", redirectTo: "inicio"},
-  {path: "", redirectTo: "inicio"},
-
-
+  {path: "*", redirectTo:"inicio"},
 ];
 
 @NgModule({
