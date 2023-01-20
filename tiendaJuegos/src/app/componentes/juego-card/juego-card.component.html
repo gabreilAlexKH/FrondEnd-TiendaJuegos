@@ -1,0 +1,25 @@
+
+
+<mat-card class="card" (click)="action()">
+
+  <img mat-card-image src="{{juego.cover}}" alt="fotoJUego">
+  <mat-card-content>
+    <mat-card-title>{{juego.name}}</mat-card-title>
+    <div [ngSwitch]="mode">
+
+      <div *ngSwitchCase="0">
+        <mat-card-subtitle>US$ {{juego.price}}</mat-card-subtitle>
+
+      </div>
+      <div *ngSwitchCase="1">
+      </div>
+
+      <div *ngSwitchCase="2">
+      </div>
+
+    </div>
+  </mat-card-content>
+
+
+
+</mat-card>

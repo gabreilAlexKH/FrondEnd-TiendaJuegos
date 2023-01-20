@@ -11,13 +11,22 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { UserToolbarComponent } from './componentes/user-toolbar/user-toolbar.component';
+import { JuegosDisplayComponent } from './componentes/juegos-display/juegos-display.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { JuegoCardComponent } from './componentes/juego-card/juego-card.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     VenClienteComponent,
     VenCadminComponent,
-    UserToolbarComponent
+    UserToolbarComponent,
+    JuegosDisplayComponent,
+    JuegoCardComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +34,10 @@ import { UserToolbarComponent } from './componentes/user-toolbar/user-toolbar.co
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule,
+    MatCardModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

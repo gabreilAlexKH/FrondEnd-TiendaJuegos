@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button *ngIf="hasReturn">
-    <mat-icon>keyboard_backspace</mat-icon>
+  <button mat-icon-button *ngIf="returnPath.length > 0">
+    <mat-icon (click)="return()"> keyboard_backspace</mat-icon>
   </button>
   <img src="../../../assets/image/logowhite.png" height="30px">
   <h1>{{titulo}}</h1>

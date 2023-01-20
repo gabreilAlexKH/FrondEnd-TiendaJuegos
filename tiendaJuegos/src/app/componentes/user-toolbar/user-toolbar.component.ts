@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-user-toolbar',
@@ -8,6 +10,16 @@ import { Component, Input } from '@angular/core';
 export class UserToolbarComponent {
 
   @Input() titulo:string = "";
-  @Input() hasReturn:boolean = false;
+  @Input() returnPath:string = "";
+
+  constructor(private rutedor:Router  ){
+
+
+  }
+
+  protected return(){
+
+    this.rutedor.navigateByUrl(this.returnPath);
+  }
 
 }
