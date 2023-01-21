@@ -16,4 +16,14 @@ export class VideojuegosApiService {
     return this.http.get(this.url);
 
   }
+
+  public fetchVideojuego(id:number){
+
+    return this.http.get(this.url + "/"+id);
+
+  }
+
+  public fetchVideojuegoReservados(){
+    return this.http.get(this.url + "/join/reservas");
+  }
 }

@@ -6,5 +6,7 @@ export interface Videojuego {
   genre: string,
   developer: string,
   price:string,
-  cover:string
+  cover:string,
+  comprado:boolean,
+  reservado:boolean,
 }

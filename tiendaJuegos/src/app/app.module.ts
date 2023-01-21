@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { JuegoCardComponent } from './componentes/juego-card/juego-card.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
+import { VenInfoJuegoComponent } from './ventanas/ven-info-juego/ven-info-juego.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {MatDividerModule} from '@angular/material/divider';
     VenCadminComponent,
     UserToolbarComponent,
     JuegosDisplayComponent,
-    JuegoCardComponent
+    JuegoCardComponent,
+    VenInfoJuegoComponent
   ],
   imports: [
     BrowserModule,

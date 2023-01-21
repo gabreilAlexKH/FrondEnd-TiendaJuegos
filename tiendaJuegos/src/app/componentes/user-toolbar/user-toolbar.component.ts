@@ -18,8 +18,13 @@ export class UserToolbarComponent {
   }
 
   protected return(){
+    this.rutedor.navigate([this.returnPath]);
+  }
 
-    this.rutedor.navigateByUrl(this.returnPath);
+  protected goToPage(path:string){
+
+    this.rutedor.navigate([path]);
+
   }
 
 }
