@@ -22,6 +22,14 @@ export class VideojuegosApiService {
     return this.http.get(this.url + "/"+id);
 
   }
+  
+  public createVideojuego(videojuego:any){
+
+    const headers = { 'content-type': 'application/json'};
+    const body = JSON.stringify({videojuego});
+
+    return this.http.post(this.url, body , {'headers':headers});
+  }
 
   public fetchVideojuegoReservados(){
     return this.http.get(this.url + "/join/reservas");

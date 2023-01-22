@@ -1,1 +1,45 @@
 <p>ven-cadmin works!</p>
+<header>
+    <mat-toolbar color="primary">
+        <img src="../../../assets/image/logowhite.png" height="30px">
+        <h1>{{titulo}}</h1>
+        <span class="spacer"></span>
+        <mat-icon>person</mat-icon>
+    
+        <button mat-raised-button class="mx-1" color="warn" (click)="goToPage('inicio')" >
+        User Mode
+        </button>
+    </mat-toolbar>
+</header>
+
+<div class="mainContainer py-3" >
+    <form [formGroup] ="profileForm">
+        <mat-form-field class="full-width">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="name" matInput placeholder="Ex. Little Big Planet">
+        </mat-form-field>
+        
+        <mat-form-field class="full-width">
+            <mat-label>Genero</mat-label>
+            <input formControlName="genre" matInput placeholder="Ex. Plataformas">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Desarrollador</mat-label>
+            <input formControlName="developer" matInput placeholder="Ex. Media Molecule">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Precio</mat-label>
+            <input formControlName="price" matInput placeholder="Ex. 60">
+        </mat-form-field>
+
+        
+        <mat-form-field class="full-width">
+            <mat-label>Descripcion</mat-label>
+            <textarea formControlName="descripcion" matInput placeholder="Ex. It makes me feel..."></textarea>
+        </mat-form-field>
+        
+        <button (click)="saveForm()" mat-raised-button color="primary">Crear</button>
+    </form>
+</div>

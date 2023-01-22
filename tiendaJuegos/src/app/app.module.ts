@@ -19,6 +19,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import { VenInfoJuegoComponent } from './ventanas/ven-info-juego/ven-info-juego.component';
 import { CarritoComprasComponent } from './ventanas/carrito-compras/carrito-compras.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input'; 
 
 
 @NgModule({
@@ -41,7 +43,10 @@ import { CarritoComprasComponent } from './ventanas/carrito-compras/carrito-comp
     MatButtonModule,
     HttpClientModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

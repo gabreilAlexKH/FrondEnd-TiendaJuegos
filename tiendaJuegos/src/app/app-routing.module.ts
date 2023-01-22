@@ -10,7 +10,7 @@ import { CarritoComprasComponent } from './ventanas/carrito-compras/carrito-comp
 const routes: Routes = [
   {path: "inicio", component: VenClienteComponent},
   {path: "juego/:id/info", component: VenInfoJuegoComponent},
-  {path: "admin", component: VenCadminComponent},
+  {path: "cadmin", component: VenCadminComponent},
   {path: "carrito-compras", component: CarritoComprasComponent},
   {path: "*", redirectTo:"inicio"},
 ];
