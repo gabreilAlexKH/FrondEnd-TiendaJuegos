@@ -9,6 +9,10 @@ export class CarritoComprasService {
   constructor(private http:HttpClient) { }
 
   public getCarrito(){
+    return this.http.get(this.url+'videojuegos/join/reservas');
+  }
+
+  public getCompras(){
     return this.http.get(this.url+'videojuegos/join/compras');
   }
 
