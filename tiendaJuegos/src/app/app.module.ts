@@ -18,6 +18,7 @@ import { JuegoCardComponent } from './componentes/juego-card/juego-card.componen
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import { VenInfoJuegoComponent } from './ventanas/ven-info-juego/ven-info-juego.component';
+import { CarritoComprasComponent } from './ventanas/carrito-compras/carrito-compras.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { VenInfoJuegoComponent } from './ventanas/ven-info-juego/ven-info-juego.
     UserToolbarComponent,
     JuegosDisplayComponent,
     JuegoCardComponent,
-    VenInfoJuegoComponent
+    VenInfoJuegoComponent,
+    CarritoComprasComponent
   ],
   imports: [
     BrowserModule,

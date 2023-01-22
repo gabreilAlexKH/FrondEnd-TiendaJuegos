@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    align-items: center;
+    text-align: center;
+}
+
+img{
+    max-width: 100%;
+}
+.card {
+    max-width: 20%;
+    min-width: 20%;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+  
+#vg {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
