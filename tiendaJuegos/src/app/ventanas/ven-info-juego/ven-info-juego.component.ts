@@ -75,13 +75,13 @@ export class VenInfoJuegoComponent implements OnInit {
 
     if (this.juego.reservado) {
       this.buttonMesage = "Ver Reservas";
-      this.nextPath = "";
+      this.nextPath = "carrito-compras";
     } else if (this.juego.comprado) {
       this.buttonMesage = "Ver en Biblioteca";
       this.nextPath = "";
     } else {
       this.buttonMesage = "Comprar";
-      this.nextPath = "";
+      this.nextPath = "carrito-compras";
     }
   }
 

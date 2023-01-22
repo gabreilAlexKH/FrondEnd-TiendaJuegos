@@ -2,3 +2,23 @@
 
   background-color: grey;
 }
+
+
+mat-card{
+
+  height: 100%;
+}
+
+.mainContainer{
+
+  padding: 0 10% 0 10%;
+}
+
+.lbl{
+  font-size:larger;
+  font-weight: 400;
+}
+
+.marginEntry{
+  margin: 4% 0 4% 0;
+}

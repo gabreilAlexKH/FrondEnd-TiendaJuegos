@@ -3,56 +3,62 @@
  </header>
 
 
- <main class="p-5">
+ <main class="mainContainer">
 
-  <div class="row">
+  <div class="row justify-content-center ">
 
-    <div class="col-2 p-4 imgCont">
+    <div class="col-4 p-4 ">
       <img src="{{juego.cover}}" width="90%">
     </div>
 
-    <div class="col-10">
+    <div class="col-8 p-4 ">
 
       <mat-card>
         <mat-card-header>
-          <mat-card-title>{{juego.name}}</mat-card-title>
+          <mat-card-title><h2>{{juego.name}}</h2></mat-card-title>
         </mat-card-header>
         <mat-divider></mat-divider>
-        <mat-card-content class="px-2 py-1">
+        <mat-card-content class="px-4 py-2 ">
 
-          <div class="row">
+          <div class="row marginEntry">
             <div class="col-4">
-              <label>Genero</label>
+              <label class="lbl">Genero: </label>
             </div>
-            <div class="col-4">
-              <p>{{juego.genre}}</p>
+            <div class="col-8">
+              <label class="lbl">{{juego.genre}}</label>
             </div>
           </div>
 
-          <div class="row">
+          <div class="row marginEntry">
             <div class="col-4">
-              <label>Desarrolador</label>
+              <label class="lbl">Desarrolador: </label>
             </div>
-            <div class="col-4">
-              <p>{{juego.developer}}</p>
+            <div class="col-8">
+              <label class="lbl">{{juego.developer}}</label>
             </div>
           </div>
 
-          <div class="row">
+          <div class="row marginEntry">
             <div class="col-4">
-              <label>Fecha Lanzamiento</label>
+              <label class="lbl" >Fecha Lanzamiento: </label>
             </div>
-            <div class="col-4">
-              <p>falta</p>
+            <div class="col-8">
+              <label class="lbl" >falta</label>
             </div>
           </div>
+
+          <div class="row marginEntry">
+            <div class="col-4">
+              <label class="lbl">US$ {{juego.price}}</label>
+            </div>
+            <div class="col-8">
+              <button class="lbl" mat-raised-button color="accent" (click)="nextAction()">{{buttonMesage}}</button>
+            </div>
+
+          </div>
+
 
         </mat-card-content>
-
-        <mat-card-actions>
-          <label>US$ {{juego.price}}</label>
-          <button mat-button (click)="nextAction()">{{buttonMesage}}</button>
-        </mat-card-actions>
 
       </mat-card>
 
@@ -62,12 +68,12 @@
 
   </div>
 
-  <div class="row">
+  <div class="row align-items-center justify-content-center">
 
-    <div class="col-12">
+    <div class="col-12 px-4">
       <mat-card>
         <mat-card-header>
-          <mat-card-title>Descripcion</mat-card-title>
+          <mat-card-title><h2>Descripcion</h2></mat-card-title>
         </mat-card-header>
         <mat-divider></mat-divider>
         <mat-card-content>
