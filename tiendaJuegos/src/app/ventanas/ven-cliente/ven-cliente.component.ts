@@ -15,42 +15,43 @@ import { Reserva } from 'src/app/interfases/reserva';
 export class VenClienteComponent {
 
 
-  titulo:string = "Game Store";
+  titulo: string = "Game Store";
   protected videojuegos: Videojuego[] = [];
-  loading:boolean = true;
-  nJueogos:number = 0;
+  loading: boolean = true;
+  nJueogos: number = 0;
 
-  constructor(private vidApi:VideojuegosApiService,private resApi:ReservasApiService,private compApi:ComprasApiService){
+  constructor(private vidApi: VideojuegosApiService, private resApi: ReservasApiService, private compApi: ComprasApiService) {
 
     forkJoin(
       this.vidApi.fetchAllVideojuego(),
       this.compApi.fetchAllCompras(),
       this.resApi.fetchAllReserva()
-      ).subscribe( (respuestas) =>{
+    ).subscribe((respuestas) => {
 
 
       this.videojuegos = respuestas[0] as Videojuego[];
+      console.log(this.videojuegos);
       let compras = respuestas[1] as Compra[];
       let reservas = respuestas[2] as Reserva[];
 
-      if(this.videojuegos.length == 0){
+      if (this.videojuegos.length == 0) {
 
         console.log("No data avalabel");
-      }else{
+      } else {
 
 
         for (const juego of this.videojuegos) {
 
-          let res:Reserva[] = reservas.filter( (val:Reserva) =>{
+          let res: Reserva[] = reservas.filter((val: Reserva) => {
             return val.videojuego_id == juego.id;
           });
-          juego.reservado = res.length ==1? true:false;
+          juego.reservado = res.length == 1 ? true : false;
 
 
-          let comp:Compra[] = compras.filter( (val:Compra) =>{
+          let comp: Compra[] = compras.filter((val: Compra) => {
             return val.videojuego_id == juego.id;
           });
-          juego.comprado = comp.length == 1? true:false;
+          juego.comprado = comp.length == 1 ? true : false;
 
         }
         this.nJueogos = this.videojuegos.length;

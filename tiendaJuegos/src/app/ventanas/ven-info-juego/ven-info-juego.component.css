@@ -1,24 +1,29 @@
-.imgCon{
+.imgCon {
 
   background-color: grey;
 }
 
 
-mat-card{
+mat-card {
 
   height: 100%;
 }
 
-.mainContainer{
+.mainContainer {
 
   padding: 0 10% 0 10%;
 }
 
-.lbl{
-  font-size:larger;
+.lbl {
+  font-size: larger;
   font-weight: 400;
 }
 
-.marginEntry{
+.marginEntry {
   margin: 4% 0 4% 0;
+}
+
+img {
+  border: grey solid 0.1rem;
+  border-radius: 5%;
 }
