@@ -28,9 +28,15 @@ export class CarritoComprasComponent implements OnInit{
     })
 
   }
+
+  saveData() {
+    localStorage.setItem("total", String(this.total))
+    localStorage.setItem("carrito", JSON.stringify(this.videojuegos))
+  }
   
   goToPage(path:string){
-    this.rutedor.navigate([path]);
+    this.saveData()
+    this.rutedor.navigate([path])
   }
 
   quitarCarrito(id: number){

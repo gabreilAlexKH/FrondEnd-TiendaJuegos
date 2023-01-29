@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CarritoComprasService } from '../../servicios/carrito-compras.service';
+import { ComprasApiService } from '../../servicios/compras-api.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-ven-videojuegos-comprados',
   templateUrl: './ven-videojuegos-comprados.component.html',
@@ -11,13 +12,27 @@ export class VenVideojuegosCompradosComponent implements OnInit{
   protected lastPath: string = "inicio";
   protected nextPath: string = "";
   constructor (
-    private carritoService: CarritoComprasService
+    private rutedor: Router,
+    private comprasService: ComprasApiService
     ) { }
+
   ngOnInit(): void {
-    this.carritoService.getCompras().subscribe((data: any) =>{
+    this.comprasService.getCompras().subscribe((data: any) =>{
       this.videojuegos = data;
     })
-
   }
+
+  goToPage(path:string){
+    this.rutedor.navigate([path]);
+  }
+
+  quitarCompra(id: number){
+    this.comprasService.deleteCompra(id).subscribe();
+    setTimeout ( () => {
+      window.location.reload();
+    }, 500
+    )
+  }
+
 
 }

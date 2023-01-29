@@ -8,6 +8,9 @@
         <mat-card-title><b>{{juego.name}}</b></mat-card-title>
         <mat-card-subtitle><b>Precio: </b>{{juego.price}}</mat-card-subtitle>
         <img mat-card-image src="{{juego.cover}}" alt="fotoJUego">
+        <mat-card-content class="delete" (click)="quitarCompra(juego.id)">
+          <button mat-raised-button color="primary">Devolver</button>
+        </mat-card-content>
       </mat-card>
     </div>
   </main>
