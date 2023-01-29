@@ -1,0 +1,45 @@
+<header>
+    <app-user-toolbar [titulo]="titulo" [returnPath]="lastPath"></app-user-toolbar>
+</header>
+
+<div class="mainContainer py-3" >
+    <form>
+        <mat-form-field class="full-width">
+            <mat-label>Nombre</mat-label>
+            <input type="text" matInput>
+        </mat-form-field>
+        
+        <mat-form-field class="full-width" >
+            <mat-label>Cedula</mat-label>
+            <input matInput type="number">
+
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Numero telefonico</mat-label>
+            <input type="tel" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Numero de la tarjeta</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Fecha de Caducidad</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>CVC</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Direccion </mat-label>
+            <textarea matInput></textarea>
+        </mat-form-field>
+        
+        <button mat-raised-button color="primary" (click)="goToPage('videojuegos-comprados')">Realizar Pago</button>
+    </form>
+</div>

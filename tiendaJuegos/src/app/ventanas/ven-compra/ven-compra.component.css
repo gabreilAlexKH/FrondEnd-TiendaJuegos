@@ -1,0 +1,14 @@
+* {
+    padding: 0;
+    align-items: center;
+    text-align: center;
+}
+
+
+.mainContainer{
+    padding: 0 10% 0 10%;
+}
+  
+.full-width {
+    width: 100%;
+}

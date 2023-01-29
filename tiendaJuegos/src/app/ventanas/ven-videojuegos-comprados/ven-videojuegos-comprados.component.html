@@ -1,0 +1,13 @@
+<header>
+    <app-user-toolbar [titulo]="titulo" [returnPath]="lastPath"></app-user-toolbar>
+  </header>
+  
+  <main class="p-5">
+    <div id="vg" fxLayout="row" fxLayoutWrap>
+      <mat-card class="card" *ngFor="let juego of videojuegos">
+        <mat-card-title><b>{{juego.name}}</b></mat-card-title>
+        <mat-card-subtitle><b>Precio: </b>{{juego.price}}</mat-card-subtitle>
+        <img mat-card-image src="{{juego.cover}}" alt="fotoJUego">
+      </mat-card>
+    </div>
+  </main>

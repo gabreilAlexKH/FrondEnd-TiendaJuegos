@@ -12,8 +12,13 @@ export class CarritoComprasService {
     return this.http.get(this.url+'videojuegos/join/reservas');
   }
 
+  
   public getCompras(){
     return this.http.get(this.url+'videojuegos/join/compras');
+  }
+
+  public deleteCarrito(id: number){
+    return this.http.delete(this.url+'reservas/join/videojuegos/'+id);
   }
 
 }

@@ -4,14 +4,16 @@ import { VenClienteComponent } from './ventanas/ven-cliente/ven-cliente.componen
 import { VenCadminComponent } from './ventanas/ven-cadmin/ven-cadmin.component';
 import { VenInfoJuegoComponent } from './ventanas/ven-info-juego/ven-info-juego.component';
 import { CarritoComprasComponent } from './ventanas/carrito-compras/carrito-compras.component';
-
-
+import { VenCompraComponent } from './ventanas/ven-compra/ven-compra.component';
+import { VenVideojuegosCompradosComponent } from './ventanas/ven-videojuegos-comprados/ven-videojuegos-comprados.component';
 
 const routes: Routes = [
   {path: "inicio", component: VenClienteComponent},
   {path: "juego/:id/info", component: VenInfoJuegoComponent},
   {path: "cadmin", component: VenCadminComponent},
   {path: "carrito-compras", component: CarritoComprasComponent},
+  {path: "compra", component: VenCompraComponent},
+  {path: "videojuegos-comprados", component: VenVideojuegosCompradosComponent},
   {path: "*", redirectTo:"inicio"},
 ];
 

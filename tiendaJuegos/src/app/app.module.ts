@@ -20,7 +20,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import { VenInfoJuegoComponent } from './ventanas/ven-info-juego/ven-info-juego.component';
 import { CarritoComprasComponent } from './ventanas/carrito-compras/carrito-compras.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input'; 
+import {MatInputModule} from '@angular/material/input';
+import { VenCompraComponent } from './ventanas/ven-compra/ven-compra.component';
+import { VenVideojuegosCompradosComponent } from './ventanas/ven-videojuegos-comprados/ven-videojuegos-comprados.component'; 
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import {MatInputModule} from '@angular/material/input';
     JuegosDisplayComponent,
     JuegoCardComponent,
     VenInfoJuegoComponent,
-    CarritoComprasComponent
+    CarritoComprasComponent,
+    VenCompraComponent,
+    VenVideojuegosCompradosComponent
   ],
   imports: [
     BrowserModule,
