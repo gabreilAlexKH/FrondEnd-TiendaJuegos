@@ -21,6 +21,7 @@ export class VenInfoJuegoComponent implements OnInit {
   protected nextPath: string = "";
   protected buttonMesage: string = "Comprar";
   protected id: number = 0;
+  protected fecha: Date = new Date("2000-01-02");
 
   public juego: Videojuego = {
     id: 0,
@@ -31,7 +32,7 @@ export class VenInfoJuegoComponent implements OnInit {
     price: "0",
     cover: "https://cdn.discordapp.com/attachments/1009846868806729738/1063303877509775421/unnamed_1.png",
     reservado: false,
-    comprado: false
+    comprado: false,
   }
 
 
@@ -51,6 +52,9 @@ export class VenInfoJuegoComponent implements OnInit {
       ).subscribe((respuestas) => {
 
         this.juego = respuestas[0] as Videojuego;
+        this.fecha = new Date((respuestas[0] as any ).created_at);
+
+
         let compras = respuestas[1] as Compra[];
         let reservas = respuestas[2] as Reserva[];
 

@@ -18,7 +18,8 @@ const routes: Routes = [
   {path: "carrito-compras", component: CarritoComprasComponent},
   {path: "compra", component: VenCompraComponent},
   {path: "videojuegos-comprados", component: VenVideojuegosCompradosComponent},
-  {path: "*", redirectTo:"inicio"},
+  {path: "**", redirectTo:"inicio"},
+
 ];
 
 @NgModule({
