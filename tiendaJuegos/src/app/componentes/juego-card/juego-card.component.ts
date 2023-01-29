@@ -2,12 +2,12 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Videojuego } from 'src/app/interfases/videojuego';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-juego-card',
   templateUrl: './juego-card.component.html',
   styleUrls: ['./juego-card.component.css']
 })
+
 export class JuegoCardComponent implements OnChanges {
 
   @Input() public mode: number = 0;
@@ -22,14 +22,15 @@ export class JuegoCardComponent implements OnChanges {
     reservado: false,
     comprado: false
   }
+
   protected statIndiator: string = "US$ " + this.juego.price;
 
   constructor(private rutedor: Router) {
 
   }
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes["juego"]) {
 
+    if (changes["juego"]) {
       if (this.juego.reservado) {
         this.statIndiator = "RESERVADO";
       } else if (this.juego.comprado) {
@@ -40,24 +41,20 @@ export class JuegoCardComponent implements OnChanges {
     }
   }
 
-
-
+  /**
+   * Comando a ejecutar segun caso
+   */
   protected action() {
     switch (this.mode) {
       case 0:
         this.rutedor.navigate(["juego/" + this.juego.id + "/info"]);
-
         break;
 
       case 1:
-
         break;
 
       case 2:
-
         break;
-
     }
   }
-
 }

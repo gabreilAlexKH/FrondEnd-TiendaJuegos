@@ -12,19 +12,13 @@ export class UserToolbarComponent {
   @Input() titulo:string = "";
   @Input() returnPath:string = "";
 
-  constructor(private rutedor:Router  ){
-
-
-  }
+  constructor(private rutedor:Router  ){}
 
   protected return(){
     this.rutedor.navigate([this.returnPath]);
   }
 
   protected goToPage(path:string){
-
     this.rutedor.navigate([path]);
-
   }
-
 }

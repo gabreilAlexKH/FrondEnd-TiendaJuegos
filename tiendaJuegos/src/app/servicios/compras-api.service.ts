@@ -6,12 +6,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ComprasApiService {
 
-  url:string = "http://localhost:3000/compras";
+  url: string = "http://localhost:3000/compras";
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
 
-  public fetchAllCompras(){
+  public fetchAllCompras() {
     return this.http.get(this.url);
   }
 

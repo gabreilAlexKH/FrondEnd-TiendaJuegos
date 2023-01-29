@@ -14,11 +14,10 @@ import { Reserva } from 'src/app/interfases/reserva';
 })
 export class VenClienteComponent {
 
-
-  titulo: string = "Game Store";
+  protected titulo: string = "Game Store";
   protected videojuegos: Videojuego[] = [];
-  loading: boolean = true;
-  nJueogos: number = 0;
+  protected loading: boolean = true;
+  protected nJuegos: number = 0;
 
   constructor(private vidApi: VideojuegosApiService, private resApi: ReservasApiService, private compApi: ComprasApiService) {
 
@@ -28,17 +27,15 @@ export class VenClienteComponent {
       this.resApi.fetchAllReserva()
     ).subscribe((respuestas) => {
 
-
       this.videojuegos = respuestas[0] as Videojuego[];
       console.log(this.videojuegos);
       let compras = respuestas[1] as Compra[];
       let reservas = respuestas[2] as Reserva[];
 
       if (this.videojuegos.length == 0) {
-
         console.log("No data avalabel");
-      } else {
 
+      } else {
 
         for (const juego of this.videojuegos) {
 
@@ -47,18 +44,15 @@ export class VenClienteComponent {
           });
           juego.reservado = res.length == 1 ? true : false;
 
-
           let comp: Compra[] = compras.filter((val: Compra) => {
             return val.videojuego_id == juego.id;
           });
           juego.comprado = comp.length == 1 ? true : false;
-
         }
-        this.nJueogos = this.videojuegos.length;
+
+        this.nJuegos = this.videojuegos.length;
         this.loading = false;
       }
     });
-
   }
-
 }

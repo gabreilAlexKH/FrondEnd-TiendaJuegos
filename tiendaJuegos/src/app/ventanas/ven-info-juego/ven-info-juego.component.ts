@@ -19,7 +19,9 @@ export class VenInfoJuegoComponent implements OnInit {
   protected titulo: string = "Game Store";
   protected lastPath: string = "inicio";
   protected nextPath: string = "";
-  protected buttonMesage: string = "Comprar"
+  protected buttonMesage: string = "Comprar";
+  protected id: number = 0;
+
   public juego: Videojuego = {
     id: 0,
     name: "def",
@@ -32,7 +34,6 @@ export class VenInfoJuegoComponent implements OnInit {
     comprado: false
   }
 
-  protected id: number = 0;
 
   constructor(private vidApi: VideojuegosApiService, private resApi: ReservasApiService, private compApi: ComprasApiService, private ruta: ActivatedRoute, private router: Router) { }
 
@@ -56,55 +57,53 @@ export class VenInfoJuegoComponent implements OnInit {
         let res: Reserva[] = reservas.filter((val: Reserva) => {
           return val.videojuego_id == this.juego.id;
         });
+
         this.juego.reservado = res.length == 1 ? true : false;
-
-
         let comp: Compra[] = compras.filter((val: Compra) => {
           return val.videojuego_id == this.juego.id;
         });
+
         this.juego.comprado = comp.length == 1 ? true : false;
-
         this.setNextAction();
-
-
       });
     });
   }
 
+  /**
+   * Establese las variables para nextAction() segun el estado del videojuego de la pagina
+   */
   private setNextAction() {
 
     if (this.juego.reservado) {
       this.buttonMesage = "Ver Reservas";
       this.nextPath = "carrito-compras";
+
     } else if (this.juego.comprado) {
       this.buttonMesage = "Ver en Biblioteca";
-      this.nextPath = "";
+      this.nextPath = "videojuegos-comprados";
+
     } else {
       this.buttonMesage = "Comprar";
       this.nextPath = "carrito-compras";
     }
   }
 
+
   protected nextAction() {
 
     if (!this.juego.reservado && !this.juego.comprado) {
 
       this.resApi.createReserva(this.juego.id).subscribe((respuesta) => {
-
         let neu: Reserva = respuesta as Reserva;
-
         if (neu.videojuego_id == this.juego.id) {
           this.router.navigate([this.nextPath]);
         } else {
           window.alert("Error de envio, no se registro reserva");
         }
-
       });
-
 
     } else {
       this.router.navigate([this.nextPath]);
     }
   }
-
 }

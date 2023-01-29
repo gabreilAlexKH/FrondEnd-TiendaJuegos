@@ -1,20 +1,24 @@
 <mat-toolbar color="primary">
+
   <button mat-icon-button *ngIf="returnPath.length > 0" (click)="return()">
-    <mat-icon > keyboard_backspace</mat-icon>
+    <mat-icon> keyboard_backspace</mat-icon>
   </button>
+
   <img src="../../../assets/image/logowhite.png" height="30px">
   <h1>{{titulo}}</h1>
   <span class="spacer"></span>
-    <mat-icon>person</mat-icon>
+  <mat-icon>person</mat-icon>
 
-  <button mat-icon-button (click)="goToPage('carrito-compras')" >
+  <button mat-icon-button (click)="goToPage('carrito-compras')">
     <mat-icon>shopping_cart</mat-icon>
   </button>
 
-  <button mat-raised-button class="mx-1" (click)="goToPage('')" >
+  <button mat-raised-button class="mx-1" (click)="goToPage('videojuegos-comprados')">
     Mis Juegos
   </button>
-  <button mat-raised-button class="mx-1" color="warn" (click)="goToPage('admin')" >
+
+  <button mat-raised-button class="mx-1" color="warn" (click)="goToPage('admin')">
     Admin Mode
   </button>
+
 </mat-toolbar>

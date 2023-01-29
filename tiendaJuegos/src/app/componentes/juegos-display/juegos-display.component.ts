@@ -11,27 +11,26 @@ export class JuegosDisplayComponent implements OnChanges {
 
 
   @Input() public videojuegos: Videojuego[] = [];
-  protected curendDisplay: Videojuego[] = [];
   @Input() public mode: number = 0;
+  protected curendDisplay: Videojuego[] = [];
 
   protected currentPage: number = 0;
   protected max_page: number = 0
   protected max_per_Page: number = 8;
-
   private itemsPerPage: number[] = [];
 
   ngOnChanges(changes: SimpleChanges) {
-
     if (changes["videojuegos"]) {
       this.initDisplay()
     }
-
   }
 
+  /**
+   * Inisialisa el Display para mostrar la lista videojuegos
+   */
   private initDisplay() {
 
     this.max_page = Math.ceil(this.videojuegos.length / this.max_per_Page);
-
     let counter = this.videojuegos.length;
 
     while (counter > this.max_per_Page) {
@@ -47,21 +46,23 @@ export class JuegosDisplayComponent implements OnChanges {
     this.changePage();
   }
 
+  /**
+   * Avansa a la siguiente pagina del display
+   */
   public next() {
-
     if (this.currentPage + 1 <= this.max_page) {
       this.currentPage += 1;
       this.changePage();
     }
-
   }
 
+  /**
+   * Retrosede a la pagina anterior del display
+   */
   public last() {
     if (this.currentPage - 1 > 0) {
       this.currentPage -= 1;
       this.changePage();
-
-
     }
   }
 
@@ -69,5 +70,4 @@ export class JuegosDisplayComponent implements OnChanges {
     let index = (this.max_per_Page * (this.currentPage - 1));
     this.curendDisplay = this.videojuegos.slice(index, index + this.itemsPerPage[this.currentPage - 1]);
   }
-
 }

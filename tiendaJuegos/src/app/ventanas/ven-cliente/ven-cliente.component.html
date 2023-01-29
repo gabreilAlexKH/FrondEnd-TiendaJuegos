@@ -2,20 +2,14 @@
   <app-user-toolbar [titulo]="titulo"></app-user-toolbar>
 </header>
 
-
 <main>
 
   <div class="mainContainer py-3">
     <h2>Todos los juegos</h2>
-    <h6>{{nJueogos}} elementos</h6>
+    <h6>{{nJuegos}} elementos</h6>
     <div>
-
-
       <app-juegos-display [videojuegos]="videojuegos" *ngIf="!loading"></app-juegos-display>
-
-
     </div>
-
   </div>
 
 </main>
