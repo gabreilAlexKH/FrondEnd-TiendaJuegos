@@ -1,0 +1,29 @@
+<mat-card class="card">
+
+    <img mat-card-image src="{{juego.cover}}" alt="fotoJUego">
+    <mat-card-content>
+    <mat-card-title>{{juego.name}}</mat-card-title>
+    <div [ngSwitch]="mode">
+
+    <div *ngSwitchCase="0">
+        <mat-card-subtitle>{{statIndiator}}</mat-card-subtitle>
+
+    </div>
+    <div *ngSwitchCase="1">
+    </div>
+
+    <div *ngSwitchCase="2">
+    </div>
+    <button mat-icon-button (click)="action()" >
+    <mat-icon>border_color</mat-icon>
+    </button>
+    <button mat-icon-button (click)="delete()" >
+    <mat-icon>delete_forever</mat-icon>
+    </button>
+
+    </div>
+</mat-card-content>
+
+
+
+</mat-card>

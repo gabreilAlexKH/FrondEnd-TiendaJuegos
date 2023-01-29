@@ -18,17 +18,23 @@ export class VideojuegosApiService {
   }
 
   public fetchVideojuego(id:number){
-
     return this.http.get(this.url + "/"+id);
-
   }
   
   public createVideojuego(videojuego:any){
-
     const headers = { 'content-type': 'application/json'};
     const body = JSON.stringify({videojuego});
-
     return this.http.post(this.url, body , {'headers':headers});
+  }
+
+  public editVideojuego(videojuego:any, id:number){
+    const headers = { 'content-type': 'application/json'};
+    const body = JSON.stringify({videojuego});
+    return this.http.put(this.url+ "/"+id, body , {'headers':headers});
+  }
+
+  public deleteVideojuego(id:number){
+    return this.http.delete(this.url+ "/"+id );
   }
 
   public fetchVideojuegoReservados(){

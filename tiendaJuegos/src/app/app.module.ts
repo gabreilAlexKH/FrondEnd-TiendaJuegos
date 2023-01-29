@@ -23,7 +23,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { VenCompraComponent } from './ventanas/ven-compra/ven-compra.component';
 import { VenVideojuegosCompradosComponent } from './ventanas/ven-videojuegos-comprados/ven-videojuegos-comprados.component'; 
-
+import { VenAdminComponent } from './ventanas/ven-admin/ven-admin.component';
+import { VenEditComponent } from './ventanas/ven-edit/ven-edit.component';
+import { JuegosDisplayAdminComponent } from './componentes/juegos-display-admin/juegos-display-admin.component';
+import { JuegoCardAdminComponent } from './componentes/juego-card-admin/juego-card-admin.component'; 
 
 @NgModule({
   declarations: [
@@ -36,7 +39,11 @@ import { VenVideojuegosCompradosComponent } from './ventanas/ven-videojuegos-com
     VenInfoJuegoComponent,
     CarritoComprasComponent,
     VenCompraComponent,
-    VenVideojuegosCompradosComponent
+    VenVideojuegosCompradosComponent,
+    VenAdminComponent,
+    VenEditComponent,
+    JuegosDisplayAdminComponent,
+    JuegoCardAdminComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+.mainContainer{
+
+    padding: 0 10% 0 10%;
+  }
+  
+.spacer {
+    flex: 1 1 auto;
+}
+
+.full-width {
+    width: 100%;
+}

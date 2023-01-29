@@ -1,0 +1,33 @@
+<header>
+    <mat-toolbar color="primary">
+        <img src="../../../assets/image/logowhite.png" height="30px">
+        <h1>{{titulo}}</h1>
+        <span class="spacer"></span>
+        <mat-icon>person</mat-icon>
+        <button mat-raised-button class="mx-1" (click)="goToPage('cadmin')" >
+        Nuevo Juego
+        </button>
+        <button mat-raised-button class="mx-1" color="warn" (click)="goToPage('inicio')" >
+        User Mode
+        </button>
+    </mat-toolbar>
+</header>
+  
+  
+  <main>
+  
+    <div class="mainContainer py-3">
+      <h2>Todos los juegos</h2>
+      <h6>{{nJueogos}} elementos</h6>
+      <div>
+  
+  
+        <app-juegos-display-admin [videojuegos]="videojuegos" *ngIf="!loading"></app-juegos-display-admin>
+  
+  
+      </div>
+  
+    </div>
+  
+  </main>
+  

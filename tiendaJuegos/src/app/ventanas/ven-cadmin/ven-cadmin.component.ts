@@ -11,8 +11,6 @@ import { VideojuegosApiService } from '../../servicios/videojuegos-api.service';
 export class VenCadminComponent {
 
   titulo:string = "Game Store";
-  loading:boolean = true;
-  nJueogos:number = 0;
 
   constructor(private rutedor:Router, private formBuilder:FormBuilder, private videojuegosApiService: VideojuegosApiService){}
 
@@ -22,21 +20,28 @@ export class VenCadminComponent {
     genre: [''],
     developer: [''],
     price: [''],
-    cover: ['https://cdn.discordapp.com/attachments/1009846868806729738/1063303877509775421/unnamed_1.png']
+    cover: ['']
   });
 
-
-
   protected goToPage(path:string){
-
     this.rutedor.navigate([path]);
+  }
 
+  numberOnly(event:any): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
   }
 
   saveForm() {
     this.videojuegosApiService.createVideojuego(this.profileForm.value).subscribe(data => {
       console.log('form',this.profileForm.value);
     })
-
+    setTimeout(()=>{
+      this.goToPage('admin')
+    },
+    500)
   }
 }

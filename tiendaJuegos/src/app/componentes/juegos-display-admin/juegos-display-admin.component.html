@@ -1,0 +1,22 @@
+<div>
+    <div class="row">
+
+    <div class="col-xl-3 col-md-4 col-sm-6 col-6 gy-1 p-3" *ngFor="let juego of curendDisplay">
+    <app-juego-card-admin [juego]="juego"></app-juego-card-admin>
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="d-flex  flex-row justify-content-around align-items-center ">
+    <button mat-icon-button (click)="last()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <label> {{currentPage}} - {{max_page}}</label>
+    <button mat-icon-button (click)="next()">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+    </div>
+</div>
+</div>

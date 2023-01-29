@@ -17,35 +17,35 @@
     <form [formGroup] ="profileForm">
         <mat-form-field class="full-width">
             <mat-label>Nombre</mat-label>
-            <input formControlName="name" matInput placeholder="Ex. Little Big Planet">
+            <input formControlName="name" matInput placeholder="{{juego.name}}">
         </mat-form-field>
         
         <mat-form-field class="full-width">
             <mat-label>Genero</mat-label>
-            <input formControlName="genre" matInput placeholder="Ex. Plataformas">
+            <input formControlName="genre" matInput placeholder="{{juego.genre}}">
         </mat-form-field>
 
         <mat-form-field class="full-width">
             <mat-label>Desarrollador</mat-label>
-            <input formControlName="developer" matInput placeholder="Ex. Media Molecule">
+            <input formControlName="developer" matInput placeholder="{{juego.developer}}">
         </mat-form-field>
 
         <mat-form-field class="full-width">
             <mat-label>Precio</mat-label>
-            <input (keypress)="numberOnly($event)" type="number" formControlName="price" matInput placeholder="Ex. 60">
+            <input (keypress)="numberOnly($event)" type="number" formControlName="price" matInput placeholder="{{juego.price}}">
         </mat-form-field>
 
         
         <mat-form-field class="full-width">
             <mat-label>Descripcion</mat-label>
-            <textarea formControlName="descripcion" matInput placeholder="Ex. It makes me feel..."></textarea>
+            <textarea formControlName="descripcion" matInput placeholder="{{juego.descripcion}}"></textarea>
         </mat-form-field>
 
         <mat-form-field class="full-width">
             <mat-label>Portada (url)</mat-label>
-            <textarea formControlName="cover" matInput placeholder="Ex. https://cdn.discordapp.com/attachments/1009846868806729738/1063303877509775421/unnamed_1.png"></textarea>
+            <textarea formControlName="cover" matInput placeholder="{{juego.cover}}"></textarea>
         </mat-form-field>
         
-        <button (click)="saveForm()" mat-raised-button color="primary">Crear</button>
+        <button (click)="saveForm()" mat-raised-button color="primary">Editar</button>
     </form>
 </div>

@@ -105,9 +105,6 @@ export class VenInfoJuegoComponent implements OnInit {
     } else {
       this.router.navigate([this.nextPath]);
     }
-
-
-
   }
 
 }
