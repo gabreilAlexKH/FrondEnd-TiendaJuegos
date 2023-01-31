@@ -3,6 +3,7 @@ import { Videojuego } from 'src/app/interfases/videojuego';
 import { Router } from '@angular/router';
 import { VideojuegosApiService } from '../../servicios/videojuegos-api.service';
 import { CarritoComprasService } from '../../servicios/carrito-compras.service';
+import { ComprasApiService } from '../../servicios/compras-api.service';
 
 @Component({
   selector: 'app-juego-card-admin',
@@ -25,7 +26,7 @@ export class JuegoCardAdminComponent implements OnChanges {
   }
   protected statIndiator: string = "US$ " + this.juego.price;
 
-  constructor(private vidApi: VideojuegosApiService, private videojuegosApiService: VideojuegosApiService, private rutedor: Router, private carritoService: CarritoComprasService) {}
+  constructor(private vidApi: VideojuegosApiService, private videojuegosApiService: VideojuegosApiService, private rutedor: Router, private carritoService: CarritoComprasService, private comprasService: ComprasApiService) {}
   ngOnChanges(changes: SimpleChanges): void {
     if (changes["juego"]) {
       this.statIndiator = "US$ " + this.juego.price;
@@ -54,16 +55,10 @@ export class JuegoCardAdminComponent implements OnChanges {
   protected delete() {
 
     this.carritoService.deleteCarrito(this.juego.id).subscribe();
-    setTimeout ( () => {
-      window.location.reload();
-    }, 500
-    )
-    this.videojuegosApiService.deleteVideojuego(this.juego.id).subscribe(data => {
-      console.log('delete');
-    })
-    setTimeout(()=>{
-      location.reload()
-    },
-    500)
+    setTimeout ( () => {}, 500)
+    this.comprasService.deleteCompra(this.juego.id).subscribe();
+    setTimeout ( () => {}, 500)
+    this.videojuegosApiService.deleteVideojuego(this.juego.id).subscribe();
+    setTimeout( () => {location.reload()}, 500)
   }
 }
