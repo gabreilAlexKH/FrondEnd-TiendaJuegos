@@ -10,23 +10,23 @@
     <form>
         <mat-form-field class="full-width">
             <mat-label>Nombre</mat-label>
-            <input type="text" matInput>
+            <input type="text" matInput >
         </mat-form-field>
         
         <mat-form-field class="full-width" >
             <mat-label>Cedula</mat-label>
-            <input #cedula (keypress)="numberOnly($event, cedula)" matInput>
+            <input #cedula (keypress)="numberOnly($event, cedula, 100000000)" matInput>
 
         </mat-form-field>
 
         <mat-form-field class="full-width">
             <mat-label>Numero telefonico</mat-label>
-            <input #tel (keypress)="numberOnly($event, tel)" matInput>
+            <input #tel (keypress)="numberOnly($event, tel, 100000000)" matInput>
         </mat-form-field>
 
         <mat-form-field class="full-width">
             <mat-label>Numero de la tarjeta</mat-label>
-            <input matInput>
+            <input #tar (keypress)="numberOnly($event, tar, 1000000000000)" matInput>
         </mat-form-field>
 
         <mat-form-field class="full-width">
@@ -36,7 +36,7 @@
 
         <mat-form-field class="full-width">
             <mat-label>CVC</mat-label>
-            <input matInput>
+            <input #cvc (keypress)="numberOnly($event, cvc, 100)" matInput>
         </mat-form-field>
 
         <mat-form-field class="full-width">

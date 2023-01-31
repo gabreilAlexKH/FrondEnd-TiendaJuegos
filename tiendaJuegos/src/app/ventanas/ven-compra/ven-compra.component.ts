@@ -46,10 +46,10 @@ export class VenCompraComponent {
     this.rutedor.navigate([path]);
   }
 
-  numberOnly(event:any, cedula:any): boolean {
+  numberOnly(event:any, inp:any, limite:number): boolean {
     const charCode = (event.which) ? event.which : event.keyCode;
-    console.log(String(cedula.value.lenght))
-    if (cedula.value > 100000000){
+    console.log(String(inp.value.lenght))
+    if (inp.value > limite){
       return false
     }
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {

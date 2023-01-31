@@ -35,10 +35,13 @@ export class CarritoComprasComponent implements OnInit{
   }
   
   goToPage(path:string){
-    this.saveData()
-    this.rutedor.navigate([path])
+    if (Object.keys(this.videojuegos).length > 0){
+      this.saveData()
+      this.rutedor.navigate([path])
+    
+    }
   }
-
+  
   quitarCarrito(id: number){
     this.carritoService.deleteCarrito(id).subscribe();
     setTimeout ( () => {
